@@ -1,0 +1,101 @@
+//PROBLEM:1.REVERSE A LIST OF 5 NUMBER
+
+package com.acitivites;
+
+import java.util.Scanner;
+
+public class ReverseNumber {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan =new Scanner(System.in);
+		int[] number=new int[5];
+		System.out.println("Enter the five number: ");
+		for(int i=0;i<5;i++) {
+			number[i]=scan.nextInt();
+		}
+		System.out.println("the number in reverse order:");
+		for(int i=4;i>=0;i--) {
+			System.out.println(number[i]);
+		}
+		scan.close();
+	}
+
+}
+//OUTPUT:
+/*Enter the five number: 
+1
+4
+7
+2
+5
+the number in reverse order:
+5
+2
+7
+4
+1                                    */
+
+//PROBLEM:2.SUM OF 5 NUMBERS
+package com.acitivites;
+
+import java.util.Scanner;
+
+public class Sumof5Number {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int sum=0;
+		System.out.println("enter the five number: ");
+		for(int i=0;i<5;i++) {
+			sum+=sc.nextInt();
+		}
+		System.out.println("Sum :"+sum);
+		sc.close();
+
+	}
+
+}
+
+//OUTPUT:
+/*enter the five number: 
+2
+4
+6
+8
+10
+Sum :30                */
+
+
+//PROBLEM:3.PRINT THE SQURE OF FIVE NUMBERS
+package com.acitivites;
+
+import java.util.Scanner;
+
+public class Squreof5Number {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the 5 number: ");
+		for(int i=0;i<5;i++) {
+			int number=sc.nextInt();
+			System.out.println("squre of number is:"+(number*number));
+		}
+		sc.close();
+	}
+
+}
+
+//OUTPUT:
+/*enter the 5 number: 
+1 5 6 3 2
+squre of number is:1
+squre of number is:25
+squre of number is:36
+squre of number is:9
+squre of number is:4      *?
+
+
+
