@@ -1,0 +1,99 @@
+//PROGRAM NUMBER: 1 MULTIPLICATION TABLE FOR ANY NUMBER
+package com.acitivites;
+
+import java.util.Scanner;
+
+public class Multabledowhile {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the number:  ");
+		int num=sc.nextInt();
+		int i=1;
+		 do{
+			System.out.println(num+ "X" +i+ "=" +(num*i));
+			i++;
+		}while(i<=20);
+		sc.close();
+
+	}
+
+}
+/* OUTPUT:
+enter the number:  
+8
+8X1=8
+8X2=16
+8X3=24
+8X4=32
+8X5=40
+8X6=48
+8X7=56
+8X8=64
+8X9=72
+8X10=80
+8X11=88
+8X12=96
+8X13=104
+8X14=112
+8X15=120
+8X16=128
+8X17=136
+8X18=144
+8X19=152
+8X20=160    */
+
+
+
+//PROGRAM NUMBER: 2 FIND THE AVERAGE OF THREE NUMBER
+package com.acitivites;
+import java.util.Scanner;
+public class Avgofthree {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		        Scanner scanner = new Scanner(System.in);
+		        char continueInput;
+		        double average;
+
+		        do {
+		            // Prompt user for three numbers
+		            System.out.print("Enter the first number: ");
+		            double num1 = scanner.nextDouble();
+
+		            System.out.print("Enter the second number: ");
+		            double num2 = scanner.nextDouble();
+
+		            System.out.print("Enter the third number: ");
+		            double num3 = scanner.nextDouble();
+
+		            // Calculate the average
+		            average = (num1 + num2 + num3) / 3;
+
+		            // Output the average
+		            System.out.println("The average of " + num1 + ", " + num2 + ", and " + num3 + " is: " + average);
+
+		            // Ask if the user wants to calculate again
+		            System.out.print("Do you want to enter another set of numbers? (y/n): ");
+		            continueInput = scanner.next().charAt(0);
+
+		        } while (continueInput == 'y' || continueInput == 'Y');
+
+		        System.out.println("Program terminated.");
+		        scanner.close();
+		    
+	}
+
+}
+
+/*
+OUTPUT:
+
+Enter the first number: 25
+Enter the second number: 45
+Enter the third number: 66
+The average of 25.0, 45.0, and 66.0 is: 45.333333333333336
+Do you want to enter another set of numbers? (y/n): y
+Enter the first number:             */
