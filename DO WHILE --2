@@ -1,0 +1,85 @@
+//PROGRAM NUMBER 1:GIVEN NUMBER IS PRIME NUMBER OR NOT
+package com.acitivites;
+
+import java.util.Scanner;
+
+public class Palindromeprog {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 Scanner scanner = new Scanner(System.in);
+	        int number;
+
+	        do {
+	            System.out.print("Enter a number (negative to quit): ");
+	            number = scanner.nextInt();
+	            if (number > 1) {
+	                boolean isPrime = true;
+	                for (int i = 2; i <= Math.sqrt(number); i++) {
+	                    if (number % i == 0) {
+	                        isPrime = false;
+	                        break;
+	                    }
+	                }
+	                System.out.println(number + " is " + (isPrime ? "prime." : "not prime."));
+	            }
+	        } while (number >= 0);
+
+	        scanner.close();
+	}
+
+}
+/*OUTPUT:
+Enter a number (negative to quit): 12
+12 is not prime.
+Enter a number (negative to quit): 121
+121 is not prime.
+Enter a number (negative to quit): 123
+123 is not prime.
+Enter a number (negative to quit): 3
+3 is prime.
+Enter a number (negative to quit):        */
+
+
+//PROGRAM NUMBER 2:
+package com.acitivites;
+
+import java.util.Scanner;
+
+public class Evenoddnum {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("");
+		 int number;
+
+	        do {
+	            System.out.print("Enter a number to see its multiplication table (negative to quit): ");
+	            number = sc.nextInt();
+	            if (number >= 0) {
+	                for (int i = 1; i <= 10; i++) {
+	                    System.out.println(number + " x " + i + " = " + number * i);
+	                }
+	            }
+	        } while (number >= 0);
+
+	        sc.close();
+
+	}
+
+}
+
+/*OUTPUT:
+Enter a number to see its multiplication table (negative to quit): 9
+9 x 1 = 9
+9 x 2 = 18
+9 x 3 = 27
+9 x 4 = 36
+9 x 5 = 45
+9 x 6 = 54
+9 x 7 = 63
+9 x 8 = 72
+9 x 9 = 81
+9 x 10 = 90
+Enter a number to see its multiplication table (negative to quit):       */
