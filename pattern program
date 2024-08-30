@@ -1,0 +1,54 @@
+//PROGRAM NUMBER :1 PATTERN PROGRAM 
+package com.pattern;
+class Patterngenarator{
+	void starPattern(int n) {
+		for(int i=1;i<=n;i++) {
+			for(int j=1;j<=i;j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+}
+public class Pattern1 {
+	public static void main(String[] args) {
+		Patterngenarator pg=new Patterngenarator();
+		pg.starPattern(5);
+	}
+
+}
+
+/*OUTPUT:
+*
+**
+***
+****
+*****
+*/
+
+//PROGRAM NUMBER :2 SQURE STAR PATTERN PROGRAM 
+package com.pattern;
+class Starp{
+	void starpattern(int n) {
+		for(int i=1;i<n;i++) {
+			for(int j=1;j<5;j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+}
+public class Squrestarpattern {
+	public static void main(String[] args) {
+		Starp sp=new Starp();
+		sp.starpattern(5);
+	}
+
+}
+
+/* OUTPUT:
+****
+****
+****
+****
+*/
