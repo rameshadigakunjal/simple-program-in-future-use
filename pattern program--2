@@ -1,0 +1,87 @@
+PROGRAM NUMBER 3:Inverted Pyramid Star Pattern
+
+package com.pattern;
+class PatternPrinter {
+    private int size;
+
+    public PatternPrinter(int size) {
+        this.size = size;
+    }
+
+    public void printPattern() {
+        for (int i = 0; i < size; i++) {
+            // Print spaces
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            // Print asterisks
+            for (int j = i; j < size; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+public class Iverted_Paramid {
+	public static void main(String[] args) {
+		 int size = 5; // You can change this size to any value you like
+	        PatternPrinter printer = new PatternPrinter(size);
+	        printer.printPattern();
+	}
+
+}
+/* OUTPUT:
+
+* * * * * 
+ * * * * 
+  * * * 
+   * * 
+    * 			*/
+
+
+PROGRAM NUMBER 4:Hollow Square Star Pattern
+
+package com.pattern;
+class SquarePattern {
+    private int size;
+
+    // Constructor
+    public SquarePattern(int size) {
+        this.size = size;
+    }
+
+    // Method to print the square pattern
+    public void printPattern() {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                // Check if it's a border position
+                if (i == 0 || i == size - 1 || j == 0 || j == size - 1)
+                    System.out.print("*");
+                else
+                    System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+public class Hollow_Square_Star_Pattern {
+	public static void main(String[] args) {
+        int n = 5; // You can change this size to any value you like
+        SquarePattern pattern = new SquarePattern(n);
+        pattern.printPattern();
+    }
+
+}
+/*OUTPUT:
+
+*****
+*   *
+*   *
+*   *
+*****
+*/
