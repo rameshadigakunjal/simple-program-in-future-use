@@ -1,0 +1,89 @@
+1. Diamond Star Pattern in java using object and scanner input:
+
+package com.acitivites;
+
+import java.util.Scanner;
+
+class StarPattern {
+    // Method to print the diamond star pattern
+    public void printPattern(int rows) {
+        // Print the upper part of the diamond
+        for (int i = 1; i <= rows; i++) {
+            for (int j = i; j < rows; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= (2 * i - 1); j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // Print the lower part of the diamond
+        for (int i = rows - 1; i >= 1; i--) {
+            for (int j = rows; j > i; j--) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= (2 * i - 1); j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+public class Dimand_star_pattern {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		StarPattern sp=new StarPattern();
+		Scanner sc=new Scanner(System.in);
+		 System.out.print("Enter the number of rows for the diamond pattern: ");
+	        int rows = sc.nextInt();
+
+	        StarPattern pattern = new StarPattern();
+	        pattern.printPattern(rows);
+	}
+}
+OUTPUT:
+	Enter the number of rows for the diamond pattern: 5
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+
+
+2. Downward Triangle Star Pattern
+
+package com.acitivites;
+class Pattern{
+	 public void printPattern(int rows) {
+	        for (int i = rows; i >= 1; i--) {
+	            for (int j = 1; j <= i; j++) {
+	                System.out.print("* ");
+	            }
+	            System.out.println(); 
+	        }
+}
+}
+public class Downword_triangle_star_pattern {
+
+	public static void main(String[] args) {
+		Pattern p=new Pattern();
+		
+		 int numberOfRows = 5; // You can change this value to adjust the size of the triangle
+	      p.printPattern(numberOfRows);
+
+	}
+
+}
+OUTPUT:
+	* * * * * 
+	* * * * 
+	* * * 
+	* * 
+	* 
+
