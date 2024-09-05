@@ -1,0 +1,67 @@
+PROGRAM NUMBER 1:NATURAL NUMBER
+
+package com.exam;
+
+import java.util.Scanner;
+
+class Sum{
+	void printSum(int number) {
+		int sum=0;
+		for(int i=1;i<=number;i++) {
+			 sum+=i;
+		}
+		System.out.println("sum=" +sum);
+	}
+}
+public class Naturanum {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Sum s=new Sum();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number: ");
+		int no=sc.nextInt();
+		s.printSum(no);
+
+	}
+
+}
+/* OUTPUT:
+Enter the number: 
+5
+sum=15    */
+
+
+PROGRAM NUMBER 2:FIBONACCI IN WHILE LOOP
+package com.acitivites;
+
+import java.util.Scanner;
+
+public class Fibonacci_while {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the number: ");
+		int number=sc.nextInt();
+		int a=0,b=1,i=1;
+		
+		while(i<=number)
+		{
+			System.out.print(a+ " ");
+			int next=a+b;
+			a=b;
+			b=next;
+			i++;
+		}
+
+	}
+
+}
+
+
+
+
+/* OUTPUT:
+enter the number: 
+10
+0 1 1 2 3 5 8 13 21 34   */
