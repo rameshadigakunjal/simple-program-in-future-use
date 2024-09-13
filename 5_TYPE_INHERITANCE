@@ -1,0 +1,250 @@
+
+1. Single Inheritance
+In Single Inheritance, a class inherits from a single parent class.
+
+package com.inheritance;
+import java.util.Scanner;
+
+class Vehicle {
+    String model;
+    
+    void start() {
+        System.out.println(model + " is starting.");
+    }
+}
+
+class Car extends Vehicle {
+    void drive() {
+        System.out.println(model + " is driving.");
+    }
+}
+
+
+
+public class SingleInheritanceExample {
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the car model: ");
+        Car car = new Car();
+        car.model = scanner.nextLine();
+        car.start(); // Inherited method from Vehicle
+        car.drive(); // Car's own method
+        scanner.close();
+    }
+
+}
+OUTPUT:
+Enter the car model: 2021
+2021 is starting.
+2021 is driving.
+
+
+2. Multilevel Inheritance
+In Multilevel Inheritance, a class is derived from another derived class.
+
+import java.util.Scanner;
+
+class Animal {
+    String name;
+    
+    void sleep() {
+        System.out.println(name + " is sleeping.");
+    }
+}
+
+class Mammal extends Animal {
+    void walk() {
+        System.out.println(name + " is walking.");
+    }
+}
+
+class Dog extends Mammal {
+    void bark() {
+        System.out.println(name + " is barking.");
+    }
+}
+
+public class MultilevelInheritanceExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the dog's name: ");
+        Dog dog = new Dog();
+        dog.name = scanner.nextLine();
+        dog.sleep(); // Inherited from Animal
+        dog.walk();  // Inherited from Mammal
+        dog.bark();  // Dog's own method
+        scanner.close();
+    }
+}
+
+OUTPUT:
+Enter the dog's name: JAKI
+JAKI is sleeping.
+JAKI is walking.
+JAKI is barking.
+
+3. Hierarchical Inheritance
+In Hierarchical Inheritance, multiple classes inherit from a single parent class.
+
+import java.util.Scanner;
+
+class Shape {
+    double area;
+    
+    void displayArea() {
+        System.out.println("Area: " + area);
+    }
+}
+
+class Circle extends Shape {
+    void calculateArea(double radius) {
+        area = Math.PI * radius * radius;
+    }
+}
+
+class Rectangle extends Shape {
+    void calculateArea(double length, double width) {
+        area = length * width;
+    }
+}
+
+public class HierarchicalInheritanceExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Circle object
+        System.out.print("Enter the radius of the circle: ");
+        double radius = scanner.nextDouble();
+        Circle circle = new Circle();
+        circle.calculateArea(radius);
+        circle.displayArea();
+
+        // Rectangle object
+        System.out.print("Enter the length and width of the rectangle: ");
+        double length = scanner.nextDouble();
+        double width = scanner.nextDouble();
+        Rectangle rectangle = new Rectangle();
+        rectangle.calculateArea(length, width);
+        rectangle.displayArea();
+
+        scanner.close();
+    }
+}
+
+OUTPUT:
+Enter the radius of the circle: 5
+Area: 78.53981633974483
+Enter the length and width of the rectangle: 4 6
+Area: 24.0
+
+
+
+
+4. Multiple Inheritance (via Interfaces)
+Java does not support Multiple Inheritance with classes, but it can be achieved through Interfaces. A class can implement multiple interfaces.
+import java.util.Scanner;
+
+interface Engine {
+    void startEngine();
+}
+
+interface Fuel {
+    void fuelType();
+}
+
+class HybridCar implements Engine, Fuel {
+    String model;
+
+    @Override
+    public void startEngine() {
+        System.out.println(model + " engine started.");
+    }
+
+    @Override
+    public void fuelType() {
+        System.out.println(model + " uses hybrid fuel.");
+    }
+}
+
+public class MultipleInheritanceExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the hybrid car model: ");
+        HybridCar car = new HybridCar();
+        car.model = scanner.nextLine();
+        car.startEngine(); // From Engine interface
+        car.fuelType();    // From Fuel interface
+        scanner.close();
+    }
+}
+
+OUTPUT:
+Enter the hybrid car model: BS6
+BS6 engine started.
+BS6 uses hybrid fuel.
+
+
+5. Hybrid Inheritance (Not directly supported in Java, but achievable through a combination of inheritance and interfaces)
+Hybrid Inheritance is a combination of more than one type of inheritance (like hierarchical and multiple). In Java, it can be implemented using interfaces along with classes.
+
+import java.util.Scanner;
+
+// Base class
+class Device {
+    String deviceName;
+    
+    void switchOn() {
+        System.out.println(deviceName + " is switched on.");
+    }
+}
+
+// Interface 1
+interface TouchScreen {
+    void touchInput();
+}
+
+// Interface 2
+interface KeyboardInput {
+    void keyboardInput();
+}
+
+// Derived class (Hybrid Inheritance - Combination of class inheritance and interfaces)
+class SmartPhone extends Device implements TouchScreen, KeyboardInput {
+    @Override
+    public void touchInput() {
+        System.out.println(deviceName + " accepts touch input.");
+    }
+
+    @Override
+    public void keyboardInput() {
+        System.out.println(deviceName + " also supports keyboard input.");
+    }
+}
+
+public class HybridInheritanceExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the smartphone model: ");
+        SmartPhone phone = new SmartPhone();
+        phone.deviceName = scanner.nextLine();
+        phone.switchOn();     // Inherited from Device
+        phone.touchInput();   // From TouchScreen interface
+        phone.keyboardInput(); // From KeyboardInput interface
+        scanner.close();
+    }
+}
+
+OUTPUT:
+Enter the smartphone model: S23ALTRA
+S23ALTRA is switched on.
+S23ALTRA accepts touch input.
+S23ALTRA also supports keyboard input.
+
+
+
+
+
+
+
+
+
