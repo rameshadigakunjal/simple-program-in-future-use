@@ -1,0 +1,93 @@
+SUPER KEYWORD:
+The super keyword in Java is a reference variable which is used to refer immediate parent class object. 
+Whenever you create the instance of subclass, an instance of parent class is created implicitly which is 
+referred by super reference variable. 
+Usage of Java super Keyword 
+	super can be used to refer immediate parent class instance variable. 
+	super can be used to invoke immediate parent class method. 
+	super() can be used to invoke immediate parent class constructor. 
+--------------------------------------------------------------------------------------------
+EXAMPLE: super can be used to refer immediate parent class instance variable. 
+
+class Animal {
+    String color = "white";
+}
+
+class Dog extends Animal {
+    String color = "black";
+
+    void printColor() {
+        System.out.println("Dog color: " + color); // prints color of Dog class
+        System.out.println("Animal color: " + super.color); // prints color of Animal class
+    }
+}
+
+public class TestSuper1 {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.printColor();
+    }
+}
+OUTPUT:
+Dog color: black
+Animal color: white
+
+--------------------------------------------------------------------------------------------
+EXAMPLE: super can be used to invoke immediate parent class method. 
+
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+class Dog extends Animal {
+    void eat() {
+        System.out.println("Dog is eating");
+    }
+
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+
+    void work() {
+        super.eat(); // calls the eat method of Animal class
+        bark();
+    }
+}
+
+public class TestSuper2 {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.work();
+    }
+}
+OUTPUT:
+Animal is eating
+Dog is barking
+
+--------------------------------------------------------------------------------------------
+EXAMPLE: super() can be used to invoke immediate parent class constructor.
+
+class Animal {
+    Animal() {
+        System.out.println("Animal is created");
+    }
+}
+
+class Dog extends Animal {
+    Dog() {
+        super(); // calls the constructor of Animal class
+        System.out.println("Dog is created");
+    }
+}
+
+public class TestSuper3 {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+    }
+}
+
+OUTPUT:
+Animal is created
+Dog is created
