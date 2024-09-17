@@ -1,0 +1,102 @@
+
+PROBLEM NUMBER :1 Abstract Class and Method Example
+// Abstract class
+abstract class Animal {
+    // Abstract method (does not have a body)
+    public abstract void makeSound();
+
+    // Regular method
+    public void eat() {
+        System.out.println("I can eat.");
+    }
+}
+
+// Subclass (inherited from Animal)
+class Dog extends Animal {
+    // Provide implementation of the abstract method
+    public void makeSound() {
+        System.out.println("Bark bark");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create an object of the Dog class
+        Dog d1 = new Dog();
+        
+        // Call the abstract method
+        d1.makeSound();
+        
+        // Call the regular method
+        d1.eat();
+    }
+}
+
+OUTPUT:
+Bark bark
+I can eat.
+
+
+
+PROBLEM NUMBER :2 Abstract Class and Method Example
+// Abstract class
+abstract class Payment {
+    // Abstract method
+    public abstract void makePayment(double amount);
+
+    // Regular method
+    public void paymentDetails(double amount) {
+        System.out.println("Payment of amount: $" + amount);
+    }
+}
+
+// Subclass for Credit Card Payment
+class CreditCardPayment extends Payment {
+    @Override
+    public void makePayment(double amount) {
+        System.out.println("Processing credit card payment of $" + amount);
+    }
+}
+
+// Subclass for Debit Card Payment
+class DebitCardPayment extends Payment {
+    @Override
+    public void makePayment(double amount) {
+        System.out.println("Processing debit card payment of $" + amount);
+    }
+}
+
+// Subclass for PayPal Payment
+class PayPalPayment extends Payment {
+    @Override
+    public void makePayment(double amount) {
+        System.out.println("Processing PayPal payment of $" + amount);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create objects of different payment methods
+        Payment creditCard = new CreditCardPayment();
+        Payment debitCard = new DebitCardPayment();
+        Payment payPal = new PayPalPayment();
+
+        // Process payments
+        creditCard.paymentDetails(100.0);
+        creditCard.makePayment(100.0);
+
+        debitCard.paymentDetails(200.0);
+        debitCard.makePayment(200.0);
+
+        payPal.paymentDetails(300.0);
+        payPal.makePayment(300.0);
+    }
+}
+
+OUTPUT:
+Payment of amount: $100.0
+Processing credit card payment of $100.0
+Payment of amount: $200.0
+Processing debit card payment of $200.0
+Payment of amount: $300.0
+Processing PayPal payment of $300.0
